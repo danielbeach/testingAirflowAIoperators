@@ -1,0 +1,6 @@
+# Local-only Airflow settings for `astro dev start`.
+# Connections for this project live in .env (see .env.example) so the API key stays out of YAML.
+airflow:
+  connections: []
+  pools: []
+  variables: []

@@ -1,0 +1,8 @@
+# Installed into the Astro Runtime image on `astro dev start`.
+apache-airflow-providers-common-ai[anthropic,openai,sql,parquet]>=0.10.0
+apache-airflow-providers-common-sql>=2.2.0
+apache-airflow-providers-postgres>=7.1.0
+
+# Workaround: cryptography 50.x wheels in runtime 3.3-9 crash with SIGILL (exit 132) under
+# Docker on Apple M4 Macs. 46.0.7 works. Remove once fixed upstream.
+cryptography==46.0.7

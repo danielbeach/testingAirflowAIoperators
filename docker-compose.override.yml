@@ -1,0 +1,15 @@
+# Extra Postgres container with demo data for the LLM SQL / agent / schema-compare DAGs.
+# Astro CLI merges this file into its generated compose project on `astro dev start`.
+services:
+  demo-postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./include/sql/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - airflow
